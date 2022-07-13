@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pokemon"
+    app:startDestination="@id/pokemonListScreen">
+
+    <fragment
+        android:id="@+id/pokemonListScreen"
+        android:name="com.engin.ui.views.pokemon_list.PokemonListScreen"
+        android:label="Pokemon List"
+        tools:layout="@layout/fragment_pokemon_list_screen" >
+        <action
+            android:id="@+id/action_pokemonListScreen_to_pokemonDetailScreen"
+            app:destination="@id/pokemonDetailScreen"
+            app:popUpTo="@id/pokemonListScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/pokemonDetailScreen"
+        android:name="com.engin.ui.views.pokemon_detail.PokemonDetailScreen"
+        android:label="Pokemon Details"
+        tools:layout="@layout/fragment_pokemon_detail_screen" >
+        <argument
+            android:name="pokemon_name"
+            app:argType="string" />
+    </fragment>
+</navigation>
